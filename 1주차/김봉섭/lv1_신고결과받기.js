@@ -1,6 +1,6 @@
 function solution(id_list, report, k) {
   let warnCount = [];
-  let idInfor = [];
+  let idInfor = {};
   let answer = [];
 
   //회원 정보 객체를 담은 리스트 생성
