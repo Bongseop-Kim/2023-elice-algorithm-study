@@ -1,6 +1,6 @@
 function solution(id_list, report, k) {
   let warnCount = [];
-  let idInfor = {};
+  let idInfor = [];
   let answer = [];
 
   //회원 정보 객체를 담은 리스트 생성
@@ -27,13 +27,10 @@ function solution(id_list, report, k) {
     }
   }
 
+ 
+
   for (const id of id_list) {
     answer.push(idInfor[id].mail);
   }
   return answer;
 }
-const id_list = ["muzi", "frodo", "apeach", "neo"];
-const report = ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"];
-const k = 2;
-
-console.log(solution(id_list, report, k));
