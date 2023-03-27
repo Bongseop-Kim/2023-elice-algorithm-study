@@ -24,5 +24,3 @@ function solution(wallpaper) {
 
   return answer;
 }
-
-console.log(answer);

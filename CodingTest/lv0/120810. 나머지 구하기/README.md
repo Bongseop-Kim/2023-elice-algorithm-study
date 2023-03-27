@@ -1,6 +1,6 @@
 # [level 0] 나머지 구하기 - 120810 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120810) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120810?language=javascript) 
 
 ### 성능 요약
 
