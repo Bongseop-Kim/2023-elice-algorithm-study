@@ -1,8 +1,4 @@
 function solution(s) {
-    const eng3 = ["one","two","six"];
-    const eng4 = ["zero","five","four","nine"];
-    const eng5 = ["three","seven","eight"];
-    
     let answer=[];
     for(let i = 0; i<s.length; i++){
         if(s[i]%1===0){
