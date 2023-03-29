@@ -13,9 +13,9 @@ function solution(s) {
     ["nine", "9"],
   ];
   for (const a of num) {
-    answer = answer.replace(a[0], a[1]);
+    answer = answer.replaceAll(a[0], a[1]);
   }
-  return parseInt(answer);
+  return Number(answer);
 }
 
 console.log(solution("2three45sixseven"));
