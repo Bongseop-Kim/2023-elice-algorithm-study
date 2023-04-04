@@ -1,10 +1,10 @@
-# [level 0] 안전지대 - 120866
+# [level 0] 안전지대 - 120866 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120866)
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120866) 
 
 ### 성능 요약
 
-메모리: 33.5 MB, 시간: 0.33 ms
+메모리: 33.7 MB, 시간: 0.46 ms
 
 ### 구분
 
@@ -76,5 +76,6 @@
 <ul>
 <li>모든 지역에 지뢰가 있으므로 안전지역은 없습니다. 따라서 0을 return합니다.</li>
 </ul>
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
