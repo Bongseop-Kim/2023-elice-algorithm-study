@@ -1,7 +1,34 @@
 .mainSide {
-  background-color: gray;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
 
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.top img {
+    max-height: 30%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom img {
+    width: 150px;
+    height: 150px;
+    border: solid 2px black;
+    border-radius: 10px;
 }
