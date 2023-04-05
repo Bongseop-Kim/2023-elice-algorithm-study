@@ -1,32 +1,4 @@
 .mainSide {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  background-color: gray;
-}
-=======
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-
-}
-
-.top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.top img {
-    max-height: 30%;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-.bottom {
-=======
     display: flex;
     flex-direction: column;
     height: 10%;
@@ -47,21 +19,11 @@
 
 .bottom-container {
     flex-grow: 3;
->>>>>>> 3e0cbaba5f6e52bbd44cd78e5a068da7a6ab24e1
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-<<<<<<< HEAD
-.bottom img {
-    width: 150px;
-    height: 150px;
-    border: solid 2px black;
-    border-radius: 10px;
-}
->>>>>>> 04323d8 (230405_mainSide 기본 영역 작업_득열)
-=======
 .bottom-container img {
     width: 100px;
     height: 100px;
@@ -69,4 +31,3 @@
     border-radius: 10px;
     margin: 100px 30px 0 ;
 }
->>>>>>> 3e0cbaba5f6e52bbd44cd78e5a068da7a6ab24e1
