@@ -25,7 +25,5 @@ function solution(board) {
       if (board[i][j] === 0) answer += 1;
     }
   }
-
-  console.log(board.flat().filter(e => e === 0))
   return answer;
 }
