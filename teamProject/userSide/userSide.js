@@ -1,1 +1,1 @@
-test
+let f = 1;
