@@ -1,3 +1,24 @@
 .userSide {
   background-color: blue;
 }
+
+#userInfo {
+  text-align: center;
+  margin-top: 10%;
+  height: 100%;
+  background-color: white;
+}
+
+#rankImg {
+  margin-left: 45%;
+}
+
+#userRank {
+  text-align: center;
+  margin-top: 50%;
+  background-color: white;
+}
+
+.userRankList {
+  list-style-type: none;
+}
