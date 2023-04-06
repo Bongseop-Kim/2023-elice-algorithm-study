@@ -1,12 +1,15 @@
 
-#userInfo {
+/* .userSide {
+  flex: 0.3;
+} */
+
+#userName {
   text-align: center;
   margin-top: 10%;
   height: 60%;
-  background-color: white;
 }
 
-#userInfo button {
+#userName button {
   margin-top: 20%;
 }
 
@@ -15,17 +18,19 @@
 }
 
 #rankImg {
+  margin-top: 50px;
   display: flex;
   align-items: center;
-  width: 65%;
+  width: 60%;
   margin-left: 20%;
 }
 
-#userRank {
-  margin-top: 50%;
-  background-color: white;
+.userRankList {
+  text-align: left;
+  margin-top: 80px;
+  list-style-type: none;
 }
 
-.userRankList {
-  list-style-type: none;
+.userRankList li {
+  padding: 10px;
 }
