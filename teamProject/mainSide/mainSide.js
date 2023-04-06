@@ -1,3 +1,4 @@
+// 커밋 테스트를 위한 임시 주석
 const images = ['log.png', 'diamond.png', 'stone.png'];
 const moneyBagButton = createButton('money-bag.png');
 const mainSide = document.querySelector('.mainSide');
