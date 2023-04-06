@@ -13,8 +13,10 @@ body{
     background-color: #AAAAAA;
 }
 .logo{
-    width: 0;
-    height: 0;
+
+    width:120px;
+    margin: 50px auto 15px;
+    display: block;
 }
 
 .login_form{
