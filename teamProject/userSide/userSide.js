@@ -38,4 +38,10 @@ const loginCheck = () => {
 
 loginCheck();
 
-logButton.addEventListener('click', userInfoUpdate);
+logButton.addEventListener('click', () => {
+  if (confirm('로그아웃 하시겠습니까?')) {
+    window.location.href = '로그인 페이지';
+  } else {
+    return;
+  }
+});
