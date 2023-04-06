@@ -1,20 +1,26 @@
-.userSide {
-  background-color: blue;
-}
-
 #userInfo {
   text-align: center;
   margin-top: 10%;
-  height: 100%;
+  height: 60%;
   background-color: white;
 }
 
+#userInfo button {
+  margin-top: 20%;
+}
+
+#userPower {
+  margin-top: 20%;
+}
+
 #rankImg {
-  margin-left: 45%;
+  display: flex;
+  align-items: center;
+  width: 65%;
+  margin-left: 20%;
 }
 
 #userRank {
-  text-align: center;
   margin-top: 50%;
   background-color: white;
 }
