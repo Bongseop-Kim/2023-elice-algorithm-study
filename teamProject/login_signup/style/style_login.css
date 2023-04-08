@@ -60,9 +60,7 @@ body{
     transition: 0.5s;
 }
 
-#signup_link_btn :hover {
-    background-color: #000;
-}
-#login_btn :hover {
+#login_btn:hover,
+#signup_link_btn:hover {
     background-color: #000;
 }
