@@ -55,5 +55,6 @@ body{
     background-color: #7C7C7C;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 
 }

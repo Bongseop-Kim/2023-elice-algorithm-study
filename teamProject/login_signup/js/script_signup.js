@@ -1,4 +1,5 @@
 //회원가입 요소 불러오기
+const logImg = document.querySelector("#logoImg")
 const signupForm =document.querySelector('#signup_form') //회원가입폼 전체
 const idInput = document.querySelector('#id_input') //아이디입력
 const psInput = document.querySelector('#ps_input1') //비밀번호입력
