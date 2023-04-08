@@ -20,7 +20,7 @@ body{
     cursor: pointer;
 }
 
-.login_form{
+.signup_style{
     width: 300px;
     height: 100%;
     border: none;
@@ -29,7 +29,7 @@ body{
     border-radius: 5px;
     background-color: #DFDFDF;
 }
-.login_form > form{
+#signup_form{
     display: flex;
     flex-direction: column;
     
@@ -45,7 +45,6 @@ body{
 
 }
 
-#login_btn,
 #signup_btn {
     margin: 0 auto;
     width: 270px;
