@@ -44,4 +44,7 @@ const signupFunc = event =>{
 
 signupForm.addEventListener('submit', signupFunc)
 
+logImg.addEventListener('click',()=>{ //로고클릭시 메인페이지이동
+  window.location.href ='https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/'
+})
 

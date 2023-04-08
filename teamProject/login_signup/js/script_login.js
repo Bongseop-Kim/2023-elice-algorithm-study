@@ -15,3 +15,6 @@ signupPage.addEventListener('click', (e)=>{
     window.location.href = 'signup.html'
     console.log("click")
 })
+logImg.addEventListener('click',()=>{
+    window.location.href ='https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/'
+})
