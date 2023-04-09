@@ -1,47 +1,76 @@
 // let user = {
 //   name: "User1",
-//   power: 0,
-//   money: 0,
-// }
+const userSide_box = document.querySelector('.userSide.box');
+const userName = document.createElement('div');
+userName.setAttribute('id', 'userName');
+userSide_box.appendChild(userName);
 
-// const currentUser = [{
-//   name:"kim",
-//   power:1,
-//   money:0
-// }]
+const userRankList = document.createElement('ul');
+userRankList.setAttribute('class', 'userRankList');
+userName.appendChild(userRankList);
 
-const userName = document.querySelector("#userName");
-const logButton = document.querySelector("#userName button");
-const userPower = document.querySelector("#userPower");
-const userMoney = document.querySelector("#userMoney");
+const rankImg = document.createElement('img');
+rankImg.setAttribute('src', './assets/ranking.png');
+rankImg.setAttribute('alt', 'rankingImg');
+rankImg.setAttribute('id', 'rankImg');
+userName.appendChild(rankImg);
+
+const logButton = document.createElement('div');
+logButton.setAttribute('id', 'logButton');
+userName.appendChild(logButton);
+
+const userPower = document.createElement('div');
+userPower.setAttribute('id', 'userPower');
+userName.appendChild(userPower);
+
+const userMoney = document.createElement('div');
+userMoney.setAttribute('id', 'userMoney');
+userName.appendChild(userMoney);
+
+const topTenUserSort = () => {
+  data.data.sort((a,b) => a.money - b.money)
+}
+
+const showTopTen = () => {
+  fetch('https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/getTopTenUsers')
+    .then(res => res.json())
+    .then(data => {
+      topTenUserSort(data)
+    })
+    .catch(err => console.log(err));
+}
 
 const userInfoUpdate = (currentUser) => {
   const user = currentUser[0];
-  document.getElementById("userName").childNodes[0].nodeValue = user.name;
+  document.getElementById("userInfo").childNodes[0].nodeValue = user.name;
   userPower.innerHTML = user.power;
   userMoney.innerHTML = user.money;
   logButton.innerHTML = "로그아웃";
-};
+}
 
 const loginCheck = () => {
-  fetch("https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/getTopTenUsers")
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.data) {
-        console.log(data.data);
+  fetch('https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users', {
+    method: 'GET',
+    headers: {
+      Authorization: Bearer //token,
+    },
+  })
+    .then(res => res.json())
+    .then(data => {
+      if(data.data) {
         userInfoUpdate(data.data);
       } else {
-        // window.location.href = "/login";
+        window.location.href = '로그인 페이지';
       }
     })
-    .catch((err) => console.log(err));
-};
+    .catch(err => console.log(err));
+}
 
 loginCheck();
 
-logButton.addEventListener("click", () => {
-  if (confirm("로그아웃 하시겠습니까?")) {
-    window.location.href = "/login";
+logButton.addEventListener('click', () => {
+  if (confirm('로그아웃 하시겠습니까?')) {
+    window.location.href = '로그인 페이지';
   } else {
     return;
   }

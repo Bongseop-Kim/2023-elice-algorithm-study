@@ -1,7 +1,7 @@
 
-/* .userSide {
+.userSide {
   flex: 0.3;
-} */
+}
 
 #userName {
   text-align: center;
@@ -9,7 +9,7 @@
   height: 60%;
 }
 
-#userName button {
+#logButton {
   margin-top: 20%;
 }
 
