@@ -1,5 +1,4 @@
-// let user = {
-//   name: "User1",
+// html 
 const userSide_box = document.querySelector('.userSide.box');
 const userName = document.createElement('div');
 userName.setAttribute('id', 'userName');
@@ -27,19 +26,7 @@ const userMoney = document.createElement('div');
 userMoney.setAttribute('id', 'userMoney');
 userName.appendChild(userMoney);
 
-const topTenUserSort = () => {
-  data.data.sort((a,b) => a.money - b.money)
-}
-
-const showTopTen = () => {
-  fetch('https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/getTopTenUsers')
-    .then(res => res.json())
-    .then(data => {
-      topTenUserSort(data)
-    })
-    .catch(err => console.log(err));
-}
-
+// userSide top
 const userInfoUpdate = (currentUser) => {
   const user = currentUser[0];
   document.getElementById("userInfo").childNodes[0].nodeValue = user.name;
@@ -53,7 +40,7 @@ const loginCheck = () => {
     method: 'GET',
     headers: {
       Authorization: Bearer //token,
-    },
+    }
   })
     .then(res => res.json())
     .then(data => {
@@ -75,3 +62,23 @@ logButton.addEventListener('click', () => {
     return;
   }
 });
+
+//userSide bottom
+const topTenUserSort = (data) => {
+  data.data.sort((a,b) => a.money - b.money)
+  return data.data.slice(0, 10);
+}
+
+const showTopTen = () => {
+  fetch('https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/getTopTenUsers')
+    .then(res => res.json())
+    .then(data => {
+      const topTenUsers = topTenUserSort(data);
+      topTenUsers.forEach(user => {
+        const rankList = document.createElement("li");
+        rankList.innerText = user.name + user.money;
+        userRankList.appendChild(rankList);
+      });
+    })
+    .catch(err => console.log(err));
+}
