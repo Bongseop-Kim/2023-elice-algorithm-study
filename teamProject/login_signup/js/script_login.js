@@ -13,26 +13,26 @@ const loginFunc = ()=>{
     psInput.value = null): null
     
     fetch('https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/login',{
-        method:'POST',
+        method:'POST', //입력된 로그인 정보 전송
         headers:{
             'content-Type': 'application/json',
         },
         body: JSON.stringify({
-            email:idInput.value,
-            password: psInput.value
+            email:idInput.value, //전송정보 1. 이메일
+            password: psInput.value //전송정보 2. 비밀번호
         })
     })
         .then((response) => response.json())
-        .then((data) => {
-            if (data.success) {
-              Cookies.set("token", data.data.token);
-              alert("로그인 완료되었습니다.");
+        .then((data) => { 
+            if (data.success) { //로그인 완료시
+              Cookies.set("token", data.data.token); // 로그인 정보 쿠키에 저장
+              alert("로그인 완료되었습니다."); 
               window.location.href = "index.html";
             } else {
-              throw new Error("로그인 실패했습니다.");
+              throw new Error("로그인 실패했습니다."); //로그인실패 에러 생성
             }
           })
-          .catch((error) => {
+          .catch((error) => { //에러시 메세지
             console.error(error);
             alert("로그인에 실패했습니다.");
           });
