@@ -25,7 +25,7 @@ userName.appendChild(rankImg);
 
 const rankButton = document.createElement("button");
 rankButton.setAttribute("id", "rankButton");
-rankButton.innerHTML = '랭킹 최신화';
+rankButton.innerHTML = "랭킹 최신화";
 userName.appendChild(rankButton);
 
 const userRankList = document.createElement("ul");
@@ -89,7 +89,7 @@ const showTopTen = () => {
 
 showTopTen();
 
-rankButton.addEventListener('click', () => {
+rankButton.addEventListener("click", () => {
   userRankList.removeChild();
   showTopTen();
 });

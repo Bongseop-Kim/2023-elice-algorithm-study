@@ -25,4 +25,10 @@ images.forEach((image) => {
   bottomContainer.appendChild(button);
 });
 
-userInfoPowerMoneyUpdate(2, 3);
+const testButton = document.createElement("button");
+testButton.setAttribute("id", "testButton");
+topContainer.appendChild(testButton);
+
+testButton.addEventListener("click", () => {
+  userInfoPowerMoneyUpdate(1);
+});
