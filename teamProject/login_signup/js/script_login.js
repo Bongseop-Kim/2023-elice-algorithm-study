@@ -10,11 +10,11 @@ const signupPage = document.querySelector('#signup_link_btn')
 
 
 // loginForm.addEventListener('submit', loginFunc)
-signupPage.addEventListener('click', (e)=>{
+signupPage.addEventListener('click', (e)=>{ //회원가입 클릭시 회원가입페이지 이동
     e.preventDefault()
     window.location.href = 'signup.html'
     console.log("click")
 })
-logImg.addEventListener('click',()=>{
+logImg.addEventListener('click',()=>{ //로고클릭시 메인페이지 이동
     window.location.href ='https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/'
 })
