@@ -1,3 +1,5 @@
+import { userInfoPowerMoneyUpdate } from "../userSide/userInfoUpdate.js";
+
 // 커밋 테스트를 위한 임시 주석
 const images = ["log.png", "diamond.png", "stone.png"];
 const moneyBagButton = createButton("money-bag.png");
@@ -22,3 +24,5 @@ images.forEach((image) => {
   const button = createButton(image);
   bottomContainer.appendChild(button);
 });
+
+userInfoPowerMoneyUpdate(2, 3);

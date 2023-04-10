@@ -27,12 +27,12 @@ userName.appendChild(userRankList);
 
 // userSide top
 const userInfoUpdate = (user) => {
-  document.getElementById("userName").prepend(user.name)
+  document.getElementById("userName").prepend(user.name);
   userPower.innerHTML = user.strong;
   userMoney.innerHTML = user.money;
   logButton.innerHTML = "로그아웃";
 };
-
+// userInfoPowerMoneyUpdate(2, 3);
 const loginCheck = () => {
   fetch("https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users", {
     method: "GET",
