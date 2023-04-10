@@ -1,27 +1,7 @@
-let user = {
-  name: "",
-  strong: 0,
-  money: 0,
-};
-
 const userSide_box = document.querySelector(".userSide.box");
 const userName = document.createElement("div");
 userName.setAttribute("id", "userName");
 userSide_box.appendChild(userName);
-
-const userRankList = document.createElement("ul");
-userRankList.setAttribute("class", "userRankList");
-userName.appendChild(userRankList);
-
-const rankImg = document.createElement("img");
-rankImg.setAttribute("src", "./assets/ranking.png");
-rankImg.setAttribute("alt", "rankingImg");
-rankImg.setAttribute("id", "rankImg");
-userName.appendChild(rankImg);
-
-const logButton = document.createElement("div");
-logButton.setAttribute("id", "logButton");
-userName.appendChild(logButton);
 
 const userPower = document.createElement("div");
 userPower.setAttribute("id", "userPower");
@@ -31,9 +11,23 @@ const userMoney = document.createElement("div");
 userMoney.setAttribute("id", "userMoney");
 userName.appendChild(userMoney);
 
+const logButton = document.createElement("button");
+logButton.setAttribute("id", "logButton");
+userName.appendChild(logButton);
+
+const rankImg = document.createElement("img");
+rankImg.setAttribute("src", "./assets/ranking.png");
+rankImg.setAttribute("alt", "rankingImg");
+rankImg.setAttribute("id", "rankImg");
+userName.appendChild(rankImg);
+
+const userRankList = document.createElement("ul");
+userRankList.setAttribute("class", "userRankList");
+userName.appendChild(userRankList);
+
 // userSide top
 const userInfoUpdate = (user) => {
-  document.getElementById("userName").childNodes[0].nodeValue = user.name;
+  document.getElementById("userName").prepend(user.name)
   userPower.innerHTML = user.strong;
   userMoney.innerHTML = user.money;
   logButton.innerHTML = "로그아웃";
