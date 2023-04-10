@@ -1,3 +1,5 @@
+// const userInfoUpdate
+
 const userSide_box = document.querySelector(".userSide.box");
 const userName = document.createElement("div");
 userName.setAttribute("id", "userName");
@@ -20,6 +22,11 @@ rankImg.setAttribute("src", "./assets/ranking.png");
 rankImg.setAttribute("alt", "rankingImg");
 rankImg.setAttribute("id", "rankImg");
 userName.appendChild(rankImg);
+
+const rankButton = document.createElement("button");
+rankButton.setAttribute("id", "rankButton");
+rankButton.innerHTML = '랭킹 최신화';
+userName.appendChild(rankButton);
 
 const userRankList = document.createElement("ul");
 userRankList.setAttribute("class", "userRankList");
@@ -62,7 +69,7 @@ logButton.addEventListener("click", () => {
 
 //userSide bottom
 const topTenUserSort = (data) => {
-  data.data.sort((a, b) => a.money - b.money);
+  data.data.sort((a, b) => b.money - a.money);
   return data.data.slice(0, 10);
 };
 
@@ -73,7 +80,7 @@ const showTopTen = () => {
       const topTenUsers = topTenUserSort(data);
       topTenUsers.forEach((user) => {
         const rankList = document.createElement("li");
-        rankList.innerText = user.name + user.money;
+        rankList.innerText = `${user.name} ${user.money}`;
         userRankList.appendChild(rankList);
       });
     })
@@ -81,3 +88,8 @@ const showTopTen = () => {
 };
 
 showTopTen();
+
+rankButton.addEventListener('click', () => {
+  userRankList.removeChild();
+  showTopTen();
+});
