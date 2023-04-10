@@ -33,7 +33,6 @@ userName.appendChild(userMoney);
 
 // userSide top
 const userInfoUpdate = (user) => {
-  console.log(user);
   document.getElementById("userName").childNodes[0].nodeValue = user.name;
   userPower.innerHTML = user.strong;
   userMoney.innerHTML = user.money;
@@ -52,7 +51,7 @@ const loginCheck = () => {
       if (data.success) {
         userInfoUpdate(data.data);
       } else {
-        // window.location.href = "로그인 페이지";
+        window.location.href = "/teamProject/login_signup/login.html";
       }
     })
     .catch((err) => console.log(err));
@@ -62,9 +61,8 @@ loginCheck();
 
 logButton.addEventListener("click", () => {
   if (confirm("로그아웃 하시겠습니까?")) {
-    window.location.href = "로그인 페이지";
-  } else {
-    return;
+    Cookies.remove("token");
+    window.location.href = "/teamProject/login_signup/login.html";
   }
 });
 

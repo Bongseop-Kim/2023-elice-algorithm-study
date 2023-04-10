@@ -22,7 +22,7 @@ const loginupFunc = (e) => {
       if (data.success) {
         Cookies.set("token", data.data.token);
         alert("로그인 완료되었습니다.");
-        window.location.href = "index.html";
+        window.location.href = "/teamProject/index.html";
       } else {
         throw new Error("로그인 실패했습니다.");
       }
