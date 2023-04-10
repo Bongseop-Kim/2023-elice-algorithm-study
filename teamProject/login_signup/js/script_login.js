@@ -8,7 +8,7 @@ const signupPage = document.querySelector("#signup_link_btn");
 const loginupFunc = (e) => {
   e.preventDefault();
   fetch("https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/login", {
-    method: "POST", //fetch요청
+    method: "POST", //fetch요청, GET으로 수정
     headers: {
       "Content-Type": "application/json",
     },
