@@ -1,12 +1,26 @@
-export function userInfoPowerMoneyUpdate(strong, money) {
-  const userPower = document.getElementById("userPower");
-  const userMoney = document.getElementById("userMoney");
+let currentUser = {
+  money: 0,
+  strong: 0,
+};
 
-  console.log(userPower);
-  if (strong) {
-    userPower.innerText += strong;
-  }
-  if (money) {
-    userMoney.innerHTML = money;
-  }
-}
+const setMoney = (money) => {
+  currentUser.money = money;
+};
+const setStrong = (strong) => {
+  currentUser.strong = strong;
+};
+
+const plusMoney = (money) => {
+  currentUser.money += money;
+  const userMoney = document.getElementById("userMoney");
+  userMoney.innerHTML = currentUser.money;
+};
+
+const buyTool = (money, strong) => {
+  currentUser.money -= money;
+  currentUser.strong += strong;
+  const userPower = document.getElementById("userPower");
+  userPower.innerHTML = currentUser.strong;
+};
+
+export { setMoney, setStrong, plusMoney, buyTool };

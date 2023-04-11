@@ -1,4 +1,4 @@
-import { userInfoPowerMoneyUpdate } from "../userSide/userInfoUpdate.js";
+import { plusMoney } from "../userSide/userInfoUpdate.js";
 
 // 커밋 테스트를 위한 임시 주석
 const images = ["log.png", "diamond.png", "stone.png"];
@@ -29,6 +29,7 @@ const testButton = document.createElement("button");
 testButton.setAttribute("id", "testButton");
 topContainer.appendChild(testButton);
 
-testButton.addEventListener("click", () => {
-  userInfoPowerMoneyUpdate(1);
+testButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  plusMoney(3);
 });

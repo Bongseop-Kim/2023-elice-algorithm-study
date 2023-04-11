@@ -1,4 +1,4 @@
-// const userInfoUpdate
+import { setMoney, setStrong } from "./userInfoUpdate.js";
 
 const userSide_box = document.querySelector(".userSide.box");
 const userName = document.createElement("div");
@@ -39,7 +39,7 @@ const userInfoUpdate = (user) => {
   userMoney.innerHTML = user.money;
   logButton.innerHTML = "로그아웃";
 };
-// userInfoPowerMoneyUpdate(2, 3);
+
 const loginCheck = () => {
   fetch("https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users", {
     method: "GET",
@@ -51,6 +51,8 @@ const loginCheck = () => {
     .then((data) => {
       if (data.success) {
         userInfoUpdate(data.data);
+        setMoney(data.data.money);
+        setStrong(data.data.strong);
       } else {
         window.location.href = "/teamProject/login_signup/login.html";
       }
