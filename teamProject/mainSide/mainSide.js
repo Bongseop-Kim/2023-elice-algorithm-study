@@ -2,7 +2,6 @@ import { currentUser } from '../userSide/userInfoUpdate.js';
 
 const mainSide = document.querySelector('.mainSide');
 const topSection = document. createElement('div');
-
 topSection.classList.add('top-section');
 
 
@@ -22,7 +21,6 @@ topSection. appendChild(moneyText);
 
 mainSide. appendChild(topSection);
 
-// add bottom area
 const bottomSection = document. createElement('div');
 bottomSection.classList.add('bottom-section');
 
@@ -32,7 +30,6 @@ const diamondBox = createBox('diamond.png', '5 sec', '2');
 bottomSection. appendChild(diamondBox);
 const stoneBox = createBox('stone.png', '10 sec', '3');
 bottomSection. appendChild(stoneBox);
-
 
 mainSide. appendChild(bottomSection);
 
@@ -63,33 +60,34 @@ function createBox(imageSrc, time, reward) {
     return boxContainer;
 }
 
-const logButton = logBox.querySelector('.box');
-const diamondButton = diamondBox.querySelector('.box');
-const stoneButton = stoneBox.querySelector('.box');
+const logButton = logBox
+const diamondButton = diamondBox
+const stoneButton = stoneBox
 
 let isButtonDisabled = false;
 
 logButton.addEventListener('click', () => {
     if (!isButtonDisabled) {
         money = currentUser.money;
-    
         const plusMoney = () => {
             fetch("https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/plusMoney", {
                 method: "POST",
-                body: {id: ``, money: 1,},
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ id: currentUser.id, money: 1 }),
             })
             .then((res) => res.json())
             .then((data) => {
                 if (data.success) {
-                    userInfoUpdate(data.data);
-                    setMoney(data.data.money);
-                } 
+                    plusServerMoney(1);
+                }
             })
             .catch((err) => console.log(err));
-        };       
-
-        plusMoney()
-
+        };
+    
+        plusMoney();
         money += 1;
         moneyText.textContent = `${money} $`;
         disableButton(logButton, 1000);
@@ -101,24 +99,25 @@ logButton.addEventListener('click', () => {
 diamondButton.addEventListener('click', () => {
     if (!isButtonDisabled) {
         money = currentUser.money;
-
         const plusMoney = () => {
             fetch("https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/plusMoney", {
                 method: "POST",
-                body: {id: ``, money: 2,},
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ id: currentUser.id, money: 2 }),
             })
             .then((res) => res.json())
             .then((data) => {
                 if (data.success) {
-                    userInfoUpdate(data.data);
-                    setMoney(data.data.money);
-                } 
+                    plusServerMoney(2);
+                }
             })
             .catch((err) => console.log(err));
-        };       
-
-        plusMoney()
-
+        };
+    
+        plusMoney();
         money += 2;
         moneyText.textContent = `${money} $`;
         disableButton(diamondButton, 5000);
@@ -130,24 +129,25 @@ diamondButton.addEventListener('click', () => {
 stoneButton.addEventListener('click', () => {
     if (!isButtonDisabled) {
         money = currentUser.money;
-
         const plusMoney = () => {
             fetch("https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/plusMoney", {
                 method: "POST",
-                body: {id: ``, money: 3,},
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ id: currentUser.id, money: 3 }),
             })
             .then((res) => res.json())
             .then((data) => {
                 if (data.success) {
-                    userInfoUpdate(data.data);
-                    setMoney(data.data.money);
-                } 
+                    plusServerMoney(3);
+                }
             })
             .catch((err) => console.log(err));
-        };       
-
-        plusMoney()
-
+        };
+    
+        plusMoney();
         money += 3;
         moneyText.textContent = `${money} $`;
         disableButton(stoneButton, 10000);
@@ -155,6 +155,7 @@ stoneButton.addEventListener('click', () => {
         disableButton(diamondButton, 10000);
     }
 });
+
 
 function disableButton(button, duration) {
     isButtonDisabled = true;
