@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="./mainSide/mainSide.css" />
     <link rel="stylesheet" href="./storeSide/storeSide.css" />
     <link rel="stylesheet" href="./userSide/userSide.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
     <title>Document</title>
+</head>
   </head>
   <body>
     <div id="container">
       <div class="storeSide box">1</div>
-      <div class="mainSide box">222</div>
-      <div class="userSide box">3</div>
+      <div class="mainSide box">2</div>
+      <div class="userSide box"></div>
     </div>
   </body>
-  <script src="./mainSide/mainSide.js"></script>
-  <script src="./storeSide/storeSide.js"></script>
-  <script src="./userSide/userSide.js"></script>
+  <script type="module" src="./storeSide/storeSide.js"></script>
+  <script type="module" src="./userSide/userSide.js"></script>
+  <script type="module" src="./mainSide/mainSide.js"></script>
 </html>
