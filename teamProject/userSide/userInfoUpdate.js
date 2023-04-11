@@ -23,4 +23,4 @@ const buyTool = (money, strong) => {
   userPower.innerHTML = currentUser.strong;
 };
 
-export { setMoney, setStrong, plusMoney, buyTool };
+export { setMoney, setStrong, plusMoney, buyTool, currentUser };
