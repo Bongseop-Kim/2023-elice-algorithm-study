@@ -64,13 +64,6 @@ const stoneButton = stoneBox.querySelector('.box');
 
 let isButtonDisabled = false;
 
-function disableButton(duration) {
-    isButtonDisabled = true;
-    setTimeout(() => {
-        isButtonDisabled = false;
-    }, duration);
-}
-
 logButton.addEventListener('click', () => {
     if (!isButtonDisabled) {
         money += 1;
