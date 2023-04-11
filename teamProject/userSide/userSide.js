@@ -1,4 +1,4 @@
-import { setMoney, setStrong } from "./userInfoUpdate.js";
+import { setId, setMoney, setStrong } from "./userInfoUpdate.js";
 
 const userSide_box = document.querySelector(".userSide.box");
 const userName = document.createElement("div");
@@ -53,6 +53,7 @@ const loginCheck = () => {
         userInfoUpdate(data.data);
         setMoney(data.data.money);
         setStrong(data.data.strong);
+        setId(data.data.id);
       } else {
         window.location.href = "/teamProject/login_signup/login.html";
       }
