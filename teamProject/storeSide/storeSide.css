@@ -1,4 +1,5 @@
 .storeSide {
+<<<<<<< HEAD
   background-color: gray;
   
 }
@@ -53,3 +54,7 @@
   text-align: center;
   float:left
 }
+=======
+  background-color: red;
+}
+>>>>>>> f76baefc087f0322eee3ef48e6f8b0e513677784

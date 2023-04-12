@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const powerList = document.getElementById("powerList");
 const jacpot = document.getElementById("jacpot");
 const imgList = ["https://raw.githubusercontent.com/Bongseop-Kim/2023-elice-algorithm-study/main/teamProject/assets/wrench.png",
@@ -99,3 +100,6 @@ function jacpotPlay(id,money,strong){
 
 
 //export default axiosPost;
+=======
+
+>>>>>>> f76baefc087f0322eee3ef48e6f8b0e513677784
