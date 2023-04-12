@@ -29,8 +29,8 @@ for (let i of imgList) {
   divImg.appendChild(img);
   storeText.appendChild(power);
   storeText.appendChild(price);
-  power.innerHTML = "power + 1 ";
-  price.innerHTML = "price : 100$";
+  power.innerHTML = `power + ${imgCount - 1} `;
+  price.innerHTML = `price : ${100 * (imgCount - 1)}$`;
   storeList.appendChild(storeText);
   powerList.appendChild(storeList);
 }
@@ -42,10 +42,10 @@ const powerLevel_4 = document.getElementById("powerLevel_4");
 const powerLevel_5 = document.getElementById("powerLevel_5");
 
 powerLevel_1.addEventListener("click", () => buyTool(100, 1));
-powerLevel_2.addEventListener("click", () => buyTool(100, 1));
-powerLevel_3.addEventListener("click", () => buyTool(100, 1));
-powerLevel_4.addEventListener("click", () => buyTool(100, 1));
-powerLevel_5.addEventListener("click", () => buyTool(100, 1));
+powerLevel_2.addEventListener("click", () => buyTool(200, 2));
+powerLevel_3.addEventListener("click", () => buyTool(300, 3));
+powerLevel_4.addEventListener("click", () => buyTool(400, 4));
+powerLevel_5.addEventListener("click", () => buyTool(500, 5));
 
 function buyTool(money, strong) {
   console.log(currentUser);
