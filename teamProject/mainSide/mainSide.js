@@ -94,12 +94,12 @@ logButton.addEventListener("click", () => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id: currentUser.id, money: 1 }),
+        body: JSON.stringify({ id: currentUser.id, money: 1 * currentUser.strong }),
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.success) {
-            plusServerMoney(1);
+            plusServerMoney(1 * currentUser.strong);
           }
         })
         .catch((err) => console.log(err));
@@ -107,7 +107,7 @@ logButton.addEventListener("click", () => {
 
     plusMoney();
 
-    money += 1;
+    money += 1 * currentUser.strong;
     moneyText.textContent = `${money} $`;
     disableButton(logButton, 1000);
     disableButton(diamondButton, 1000);
@@ -125,19 +125,19 @@ diamondButton.addEventListener("click", () => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id: currentUser.id, money: 2 }),
+        body: JSON.stringify({ id: currentUser.id, money: 2 * currentUser.strong }),
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.success) {
-            plusServerMoney(2);
+            plusServerMoney(2 * currentUser.strong);
           }
         })
         .catch((err) => console.log(err));
     };
 
     plusMoney();
-    money += 2;
+    money += 2 * currentUser.strong;
     moneyText.textContent = `${money} $`;
     disableButton(diamondButton, 5000);
     disableButton(logButton, 5000);
@@ -155,19 +155,19 @@ stoneButton.addEventListener("click", () => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id: currentUser.id, money: 3 }),
+        body: JSON.stringify({ id: currentUser.id, money: 3 * currentUser.strong }),
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.success) {
-            plusServerMoney(3);
+            plusServerMoney(3 * currentUser.strong);
           }
         })
         .catch((err) => console.log(err));
     };
 
     plusMoney();
-    money += 3;
+    money += 3 * currentUser.strong;
     moneyText.textContent = `${money} $`;
     disableButton(stoneButton, 10000);
     disableButton(logButton, 10000);
