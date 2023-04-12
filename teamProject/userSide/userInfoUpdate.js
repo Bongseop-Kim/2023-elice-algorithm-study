@@ -17,7 +17,6 @@ const setStrong = (strong) => {
 
 const plusServerMoney = (money) => {
   currentUser.money += money;
-  console.log(money);
   const userMoney = document.getElementById("userMoney");
   userMoney.innerHTML = currentUser.money;
 };
@@ -26,7 +25,10 @@ const buyServerTool = (money, strong) => {
   currentUser.money -= money;
   currentUser.strong += strong;
   const userPower = document.getElementById("userPower");
+  const userMoney = document.getElementById("userMoney");
+  userMoney.innerHTML = currentUser.money;
   userPower.innerHTML = currentUser.strong;
+  console.log(currentUser);
 };
 
 export { setMoney, setStrong, plusServerMoney, buyServerTool, currentUser, setId };
