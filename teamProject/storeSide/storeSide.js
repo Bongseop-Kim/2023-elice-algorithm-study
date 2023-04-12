@@ -1,3 +1,5 @@
+import { buyServerTool, currentUser } from "../userSide/userInfoUpdate.js";
+
 const powerList = document.getElementById("powerList");
 const jacpot = document.getElementById("jacpot");
 const imgList = [
@@ -8,7 +10,7 @@ const imgList = [
   "https://raw.githubusercontent.com/Bongseop-Kim/2023-elice-algorithm-study/main/teamProject/assets/robot.png",
 ];
 let imgCount = 1;
-for (i of imgList) {
+for (let i of imgList) {
   const storeList = document.createElement("div");
   const storeText = document.createElement("div");
   const divImg = document.createElement("div");
@@ -32,62 +34,38 @@ for (i of imgList) {
   storeList.appendChild(storeText);
   powerList.appendChild(storeList);
 }
+
 const powerLevel_1 = document.getElementById("powerLevel_1");
 const powerLevel_2 = document.getElementById("powerLevel_2");
 const powerLevel_3 = document.getElementById("powerLevel_3");
 const powerLevel_4 = document.getElementById("powerLevel_4");
 const powerLevel_5 = document.getElementById("powerLevel_5");
 
-let user = {
-  name: "asjkldf",
-  power: 12,
-  money: 400,
-};
-powerLevel_1.addEventListener("click", buyTool);
-powerLevel_2.addEventListener("click", buyTool);
-powerLevel_3.addEventListener("click", buyTool);
-powerLevel_4.addEventListener("click", buyTool);
-powerLevel_5.addEventListener("click", buyTool);
+powerLevel_1.addEventListener("click", () => buyTool(100, 1));
+powerLevel_2.addEventListener("click", () => buyTool(100, 1));
+powerLevel_3.addEventListener("click", () => buyTool(100, 1));
+powerLevel_4.addEventListener("click", () => buyTool(100, 1));
+powerLevel_5.addEventListener("click", () => buyTool(100, 1));
 
-function buyTool() {
-  axiosGet();
-  if (user.money < 100) {
-    alert(`name:${user.name} money:${user.money} power:${user.power} money를 100이상 채우시오.`);
+function buyTool(money, strong) {
+  console.log(currentUser);
+  if (currentUser.money < 100) {
+    alert("돈이 부족합니다.");
   } else {
-    user.power++;
-    user.money -= 100;
-    alert(`money:${user.money} power:${user.power} -100 $ , +power`);
-    axiosPost();
+    buyServerTool(money, strong);
+    axiosPost(strong, money);
   }
 }
 
-function axiosGet() {
+function axiosPost(strong, money) {
   axios
-    .get("https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users")
-    .then((response) => {
-      let res = response.data.data;
-      user.name = res.name;
-      user.power = res.power;
-      user.money = res.money;
-      alert(`axiosGet TEST`);
-    })
-    .catch(function (error) {
-      // 에러 핸들링
-      console.log(error);
-    });
-}
-
-function axiosPost() {
-  axios
-    .post("https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/buyTool", {
-      id: user.id,
-      power: user.power,
-      money: user.money,
+    .post("http://localhost:8000/api/users/buyTool", {
+      id: currentUser.id,
+      strong: strong,
+      money: money,
     })
     .then((response) => {
-      response.data.power = user.power;
-      response.data.money = user.money;
-      alert(`axiosPost TEST`);
+      console.log(response);
     })
     .catch(function (error) {
       console.log(error);
