@@ -78,9 +78,9 @@ function createBox(imageSrc, time, reward) {
   return boxContainer;
 }
 
-const logButton = logBox.querySelector(".box");
-const diamondButton = diamondBox.querySelector(".box");
-const stoneButton = stoneBox.querySelector(".box");
+const logButton = logBox;
+const diamondButton = diamondBox;
+const stoneButton = stoneBox;
 
 let isButtonDisabled = false;
 
