@@ -65,7 +65,8 @@ function axiosPost(strong, money) {
       money: money,
     })
     .then((response) => {
-      console.log(response);
+      const setmainmoney = document.getElementsByClassName("money-text");
+      setmainmoney[0].innerHTML = `${response.data.data.money} $`;
     })
     .catch(function (error) {
       console.log(error);
