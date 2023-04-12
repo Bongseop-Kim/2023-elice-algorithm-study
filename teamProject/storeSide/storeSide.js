@@ -59,7 +59,7 @@ function buyTool(money, strong) {
 
 function axiosPost(strong, money) {
   axios
-    .post("http://localhost:8000/api/users/buyTool", {
+    .post("https://port-0-king-of-mine-1093j2alg6lmfjz.sel3.cloudtype.app/api/users/buyTool", {
       id: currentUser.id,
       strong: strong,
       money: money,
