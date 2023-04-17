@@ -1,5 +1,6 @@
 import { currentUser } from '../userSide/userInfoUpdate.js';
 
+
 const mainSide = document.querySelector('.mainSide');
 const topSection = document. createElement('div');
 topSection.classList.add('top-section');
